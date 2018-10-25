@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>404</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+background-color: black;
+color: white;
+font-size: 14px;
+}</string>
+  </property>
+  <widget class="QGraphicsView" name="logo">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>75</width>
+     <height>75</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent; border: 0;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="price_usd">
+   <property name="geometry">
+    <rect>
+     <x>219</x>
+     <y>28</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white; font-size: 22px;</string>
+   </property>
+   <property name="text">
+    <string>0.123456</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="usd_label">
+   <property name="geometry">
+    <rect>
+     <x>348</x>
+     <y>33</y>
+     <width>51</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
+   <property name="text">
+    <string>USD</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="price_label">
+   <property name="geometry">
+    <rect>
+     <x>181</x>
+     <y>33</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white; font-size: 16px; color: orange;</string>
+   </property>
+   <property name="text">
+    <string>Price</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>19</y>
+     <width>221</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid white; border-radius: 15px; background-color: rgb(40,40,40);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="rank_number">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>250</y>
+     <width>51</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid white; border-radius: 15px; background-color: green; color: white; font-size: 22px;</string>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="rank_label">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>221</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: orange; font-size: 12px;</string>
+   </property>
+   <property name="text">
+    <string>CMC Rank</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="btc_label">
+   <property name="geometry">
+    <rect>
+     <x>348</x>
+     <y>70</y>
+     <width>51</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
+   <property name="text">
+    <string>BTC</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="price_btc">
+   <property name="geometry">
+    <rect>
+     <x>218</x>
+     <y>63</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white; font-size: 19px;</string>
+   </property>
+   <property name="text">
+    <string>0.123456</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="supply_percent">
+   <property name="geometry">
+    <rect>
+     <x>109</x>
+     <y>265</y>
+     <width>281</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white; font-size: 12px</string>
+   </property>
+   <property name="maximum">
+    <number>2100000000</number>
+   </property>
+   <property name="value">
+    <number>209191000</number>
+   </property>
+   <property name="textVisible">
+    <bool>true</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="invertedAppearance">
+    <bool>false</bool>
+   </property>
+   <property name="textDirection">
+    <enum>QProgressBar::TopToBottom</enum>
+   </property>
+   <property name="format">
+    <string>%p%</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>122</x>
+     <y>241</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: orange; font-size: 13px;</string>
+   </property>
+   <property name="text">
+    <string>Circulating Supply: </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="supply_amount">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>239</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white; font-size: 12px;</string>
+   </property>
+   <property name="text">
+    <string>2,091,910,000</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>86</x>
+     <y>125</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: orange; font-size: 15px;</string>
+   </property>
+   <property name="text">
+    <string>Market Cap</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>262</x>
+     <y>125</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: orange; font-size: 15px;</string>
+   </property>
+   <property name="text">
+    <string>Volume</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame_2">
+   <property name="geometry">
+    <rect>
+     <x>36</x>
+     <y>114</y>
+     <width>331</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid grey; border-radius: 15px; background-color: rgb(40,40,40);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="volume">
+   <property name="geometry">
+    <rect>
+     <x>205</x>
+     <y>146</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white; font-size: 22px;</string>
+   </property>
+   <property name="text">
+    <string>$81,005,687</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="market_cap">
+   <property name="geometry">
+    <rect>
+     <x>47</x>
+     <y>146</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white; font-size: 22px;</string>
+   </property>
+   <property name="text">
+    <string>$112,284,337</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="perc_change">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>53</y>
+     <width>64</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white; font-size: 15px;</string>
+   </property>
+   <property name="text">
+    <string>123.44%</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="market_btc">
+   <property name="geometry">
+    <rect>
+     <x>81</x>
+     <y>180</y>
+     <width>85</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white; font-size: 12px;</string>
+   </property>
+   <property name="text">
+    <string>17,932 BTC</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="volume_btc">
+   <property name="geometry">
+    <rect>
+     <x>245</x>
+     <y>180</y>
+     <width>84</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white; font-size: 12px;</string>
+   </property>
+   <property name="text">
+    <string>13,659 BTC</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <zorder>frame_2</zorder>
+  <zorder>frame</zorder>
+  <zorder>logo</zorder>
+  <zorder>price_usd</zorder>
+  <zorder>usd_label</zorder>
+  <zorder>price_label</zorder>
+  <zorder>rank_number</zorder>
+  <zorder>rank_label</zorder>
+  <zorder>btc_label</zorder>
+  <zorder>price_btc</zorder>
+  <zorder>supply_percent</zorder>
+  <zorder>label</zorder>
+  <zorder>supply_amount</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>volume</zorder>
+  <zorder>market_cap</zorder>
+  <zorder>perc_change</zorder>
+  <zorder>market_btc</zorder>
+  <zorder>volume_btc</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
